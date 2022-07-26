@@ -9,7 +9,7 @@ RUN apk --no-cache add --virtual build-dependencies \
     git \
   && mkdir -p /root/gocode \
   && export GOPATH=/root/gocode \
-  && go get github.com/mailhog/MailHog
+  && go install github.com/mailhog/MailHog@latest
 
 FROM alpine:3
 # Add mailhog user/group with uid/gid 1000.
@@ -23,7 +23,7 @@ USER mailhog
 
 WORKDIR /home/mailhog
 
-ENTRYPOINT ["MailHog"]
+ENTRYPOINT ["MailHog", "-auth-file=.auth"]
 
 # Expose the SMTP and HTTP ports:
 EXPOSE 1025 8025
