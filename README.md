@@ -1,7 +1,7 @@
 MailHog [ ![Download](https://img.shields.io/github/release/mailhog/MailHog.svg) ](https://github.com/mailhog/MailHog/releases/tag/v1.0.0) [![GoDoc](https://godoc.org/github.com/mailhog/MailHog?status.svg)](https://godoc.org/github.com/mailhog/MailHog) [![Build Status](https://travis-ci.org/mailhog/MailHog.svg?branch=master)](https://travis-ci.org/mailhog/MailHog)
 =========
 
-Inspired by [MailCatcher](http://mailcatcher.me/), easier to install.
+Inspired by [MailCatcher](https://mailcatcher.me/), easier to install.
 
 * Download and run MailHog
 * Configure your outgoing SMTP server
@@ -31,10 +31,16 @@ brew update && brew install mailhog
 
 Then, start MailHog by running `mailhog` in the command line.
 
-#### Debian / Ubuntu
+#### Debian / Ubuntu Go < v1.18
 ```bash
 sudo apt-get -y install golang-go
 go get github.com/mailhog/MailHog
+```
+
+#### Go >= v1.17 (Debian Bookworm) 
+```bash
+sudo apt-get -y install golang-go
+go install github.com/mailhog/MailHog@latest
 ```
 
 Then, start MailHog by running `/path/to/MailHog` in the command line.
